@@ -28,6 +28,7 @@
     "express"
   ],
   "scripts": {
+    "heroku-postbuild": "rm -rf client/dist/ && webpack -p --config webpack.config.js --progress",
     "start": "rm -rf client/dist/ && webpack --config webpack.config.js -p && node index.js",
     "test": "node test.js"
   }
