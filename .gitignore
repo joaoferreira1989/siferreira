@@ -2,6 +2,9 @@
 node_modules
 npm-debug.log
 
+# Distributable build
+client/dist
+
 # Local development
 *.env
 *.dev
