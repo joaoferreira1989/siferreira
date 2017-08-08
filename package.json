@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.js && webpack --config webpack.config.js",
     "test": "node test.js"
   },
   "dependencies": {
@@ -18,7 +18,8 @@
   },
   "devDependencies": {
     "request": "^2.81.0",
-    "tape": "^4.7.0"
+    "tape": "^4.7.0",
+    "webpack": "3.4.1"
   },
   "repository": {
     "type": "git",
