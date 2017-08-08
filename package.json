@@ -11,12 +11,12 @@
     "angular": "1.6.5",
     "express": "4.15.2",
     "html-webpack-plugin": "2.30.1",
-    "pg": "6.x"
+    "pg": "6.x",
+    "webpack": "3.4.1"
   },
   "devDependencies": {
     "request": "^2.81.0",
-    "tape": "^4.7.0",
-    "webpack": "3.4.1"
+    "tape": "^4.7.0"
   },
   "repository": {
     "type": "git",
