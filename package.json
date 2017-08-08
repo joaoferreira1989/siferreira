@@ -10,8 +10,11 @@
   "dependencies": {
     "angular": "1.6.5",
     "express": "4.15.2",
+    "html-loader": "0.4.4",
     "html-webpack-plugin": "2.30.1",
+    "ngtemplate-loader": "1.3.1",
     "pg": "6.x",
+    "reset-css": "2.2.1",
     "webpack": "3.4.1"
   },
   "devDependencies": {

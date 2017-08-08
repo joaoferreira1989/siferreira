@@ -21,5 +21,24 @@ module.exports = {
                 collapseWhitespace: false
             }
         })
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.html$/,
+                exclude: [
+                    path.resolve(__dirname, './client') + '/index.html',
+                    path.resolve(__dirname, './client') + '/dist/index.html'
+                ],
+                loader: [
+                    'ngtemplate-loader',
+                    'html-loader?attrs=use:xlink:href'
+                ]
+            },
+            {
+                test: /\.(jpg|png)$/i,
+                loader: 'file-loader'
+            },
+        ]
+    }
 };
