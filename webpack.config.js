@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -16,6 +17,10 @@ module.exports = {
             minify: {
                 collapseWhitespace: false
             }
+        }),
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: true,
+            mangle: false
         })
     ],
     module: {
@@ -34,14 +39,15 @@ module.exports = {
             {
                 test: /\.(jpg|png)$/i,
                 loader: 'file-loader'
-            }
-        ],
-        loaders: [
+            },
             {
                 test: /\.js$/,
-                loader: 'babel',
-                query: {
-                    presets: ['es2015']
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['es2015']
+                    }
                 }
             }
         ]
