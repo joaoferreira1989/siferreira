@@ -1,5 +1,4 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'client/dist')
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     plugins: [
         new HtmlWebpackPlugin({
             inject: false,
@@ -17,10 +16,6 @@ module.exports = {
             minify: {
                 collapseWhitespace: false
             }
-        }),
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            mangle: false
         })
     ],
     module: {
