@@ -16,7 +16,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: false,
             template: path.resolve(__dirname, './client') + '/index.html',
-            favicon: 'client/favicon.ico',
+            favicon: 'public/favicon.ico',
             minify: {
                 collapseWhitespace: false
             }
