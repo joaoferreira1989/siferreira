@@ -1,7 +1,9 @@
 import templateUrl from './import.html';
+import controller from './import.controller';
 
 const ImportComponent = {
-    templateUrl
+    templateUrl,
+    controller
 };
 
 export {

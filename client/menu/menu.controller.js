@@ -15,4 +15,4 @@ class MenuController {
 
 MenuController.$inject = ['$scope', '$location'];
 
-export { MenuController };
+export default MenuController;

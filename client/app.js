@@ -1,5 +1,6 @@
 import angular from 'angular';
 import 'angular-route';
+import 'angular-file-upload';
 import { MenuModule } from './menu/menu.module';
 import { ImportModule } from './import/import.module';
 import { Error404Module } from './404/404.module';
@@ -10,6 +11,7 @@ angular.element(document.body).ready(function () {
 
 angular.module('sif', [
     'ngRoute',
+    'angularFileUpload',
     MenuModule.name,
     ImportModule.name,
     Error404Module.name
