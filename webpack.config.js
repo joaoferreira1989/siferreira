@@ -35,6 +35,15 @@ module.exports = {
                 test: /\.(jpg|png)$/i,
                 loader: 'file-loader'
             }
+        ],
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
+                }
+            }
         ]
     }
 };
