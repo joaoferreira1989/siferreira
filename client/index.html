@@ -9,12 +9,13 @@
 
     <link rel="stylesheet" type="text/css" href="/node_modules/reset-css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/base.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/menu.css"/>
 </head>
 
 <body>
 <menu></menu>
-<main-container></main-container>
+<div ng-view class="flat-layout center" autoscroll="true"></div>
 <footer></footer>
 
 <script src="bundle.js"></script>

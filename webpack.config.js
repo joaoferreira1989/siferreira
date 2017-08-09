@@ -7,11 +7,7 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'client/dist')
     },
-    resolve: {
-        alias: {
-            angular: require.resolve('angular')
-        }
-    },
+    devtool: 'inline-source-map',
     plugins: [
         new HtmlWebpackPlugin({
             inject: false,
@@ -38,7 +34,7 @@ module.exports = {
             {
                 test: /\.(jpg|png)$/i,
                 loader: 'file-loader'
-            },
+            }
         ]
     }
 };

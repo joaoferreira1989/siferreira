@@ -40,17 +40,23 @@
 <nav class="top-menu-navbar navbar navbar-inverse">
     <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
-            <li class="active">
-                <a href="#">Motas</span></a>
+            <li ng-class="$ctrl.currentLocation === '/' ? 'active' : ''">
+                <a ng-href="/">Home</span></a>
+            </li>
+            <li ng-class="$ctrl.currentLocation === '/import' ? 'active' : ''">
+                <a ng-href="#!/import">Import</span></a>
             </li>
             <li>
-                <a href="#">Peças</a>
+                <a ng-href="#!/404">Motas</span></a>
             </li>
             <li>
-                <a href="#">Agricultura</a>
+                <a ng-href="#!/404">Peças</a>
             </li>
             <li>
-                <a href="#">Contactos</a>
+                <a ng-href="#!/404">Agricultura</a>
+            </li>
+            <li>
+                <a ng-href="#!/404">Contactos</a>
             </li>
         </ul>
     </div>
