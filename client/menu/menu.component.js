@@ -1,9 +1,9 @@
 import templateUrl from './menu.html';
-import controller from './menu.controller';
+import { MenuController } from './menu.controller';
 
 const MenuComponent = {
     templateUrl,
-    controller
+    controller: MenuController
 };
 
 export {

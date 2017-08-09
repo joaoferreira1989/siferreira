@@ -7,7 +7,7 @@ class MenuController {
     }
 
     $onInit() {
-        this.$scope.$on('$routeChangeSuccess', (event, current, previous) => {
+        this.$scope.$on('$routeChangeSuccess', () => {
             this.currentLocation = this.$location.path();
         });
     }
@@ -15,4 +15,4 @@ class MenuController {
 
 MenuController.$inject = ['$scope', '$location'];
 
-export default MenuController;
+export { MenuController };
