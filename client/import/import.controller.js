@@ -2,31 +2,39 @@ class ImportController {
     constructor($scope, FileUploader) {
         Object.assign(this, {
             $scope,
-            FileUploader
+            FileUploader,
+            model: {
+                name: '',
+                description: '',
+                images: []
+            }
         });
     }
 
     $onInit() {
-        const uploader = this.$scope.uploader = new this.FileUploader({
-            url: 'upload.php'
+        this.uploader = this.$scope.uploader = new this.FileUploader({
+            url: 'https://api.imgur.com/3/image',
+            headers: {
+                "Authorization": "Client-ID c65b7ac9a32a858"
+            },
+            alias: 'image',
+            autoUpload: true
         });
 
         // Upload Filters
-        uploader.filters.push({
+        this.uploader.filters.push({
             name: 'imageFilter',
-            fn: (item, options)  => {
+            fn: (item) => {
                 const type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
 
                 return '|jpg|png|jpeg|bmp|gif|'.indexOf(type) !== -1;
             }
         });
 
-        uploader.onAfterAddingAll = (addedFileItems) => {
-            console.log('onAfterAddingAll', addedFileItems);
-        };
+        this.uploader.onCompleteItem = (fileItem, response) => {
+            this.model.images.push(response.data.link);
 
-        uploader.onCompleteAll = function() {
-            console.log('onCompleteAll');
+            console.info('onSuccessItem', response.data.link);
         };
     }
 }

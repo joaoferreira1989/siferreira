@@ -1,10 +1,11 @@
 <div nv-file-drop="" uploader="uploader">
     <form novalidate class="simple-form">
         <div class="left">
-            <input class="form-control" placeholder="Nome"/>
+            <input class="form-control" placeholder="Nome" ng-model="$ctrl.model.name"/>
             <br>
-            <textarea class="form-control" placeholder="Descrição" rows="7"></textarea>
+            <textarea class="form-control" placeholder="Descrição" rows="7" ng-model="$ctrl.model.description"></textarea>
         </div>
+        <pre>user = {{$ctrl.model | json}}</pre>
         <div class="right">
             <div class="drop-zone" nv-file-over="" uploader="uploader">
                 Imagens
@@ -19,7 +20,6 @@
                         <th width="50%">Nome</th>
                         <th>Tamanho</th>
                         <th>Estado</th>
-                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -31,39 +31,11 @@
                         <td nowrap>{{ item.file.size/1024/1024|number:2 }} MB</td>
                         <td class="text-center">
                             <span ng-show="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
-                            <span ng-show="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
                             <span ng-show="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
-                        </td>
-                        <td nowrap>
-                            <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
-                                <span class="glyphicon glyphicon-trash"></span> Remover
-                            </button>
                         </td>
                     </tr>
                     </tbody>
                 </table>
-
-                <div>
-                    <div class="progress" style="">
-                        <div class="progress-bar" role="progressbar" ng-style="{ 'width': uploader.progress + '%' }"></div>
-                    </div>
-                    <button type="button" class="btn btn-success btn-s"
-                            ng-click="uploader.uploadAll()"
-                            ng-disabled="!uploader.getNotUploadedItems().length">
-                        <span class="glyphicon glyphicon-upload"></span> Upload
-                    </button>
-                    <button type="button" class="btn btn-warning btn-s"
-                            ng-click="uploader.cancelAll()"
-                            ng-disabled="!uploader.isUploading">
-                        <span class="glyphicon glyphicon-ban-circle"></span> Cancelar
-                    </button>
-                    <button type="button" class="btn btn-danger btn-s"
-                            ng-click="uploader.clearQueue()"
-                            ng-disabled="!uploader.queue.length">
-                        <span class="glyphicon glyphicon-trash"></span> Limpar
-                    </button>
-                </div>
-
             </div>
     </form>
 </div>
